@@ -5,10 +5,6 @@ services:
     image: postgres:15
     env_file:
       - .env
-    # environment:
-    #   POSTGRES_USER: myuser
-    #   POSTGRES_PASSWORD: mypassword
-    #   POSTGRES_DB: deliverydb
     ports:
       - "5432:5432"
     volumes:
@@ -27,14 +23,6 @@ services:
       - db
     env_file:
       - .env
-    # environment:
-    #   - DEBUG=1
-    #   - DB_NAME=deliverydb
-    #   - DB_USER=myuser
-    #   - DB_PASSWORD=mypassword
-    #   - DB_HOST=db
-    #   - DB_PORT=5432
-    #   - SECRET_KEY=your_secret_key_here
 
 volumes:
   postgres_data:
