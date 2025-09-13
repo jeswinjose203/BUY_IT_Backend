@@ -16,8 +16,12 @@ RUN pip install -r requirements.txt
 # Copy project
 COPY . /app/
 
+# Copy entrypoint script
+COPY entrypoint.sh /app/entrypoint.sh
+RUN chmod +x /app/entrypoint.sh
+
 # Expose port
 EXPOSE 8000
 
-# Run server using Gunicorn
-CMD ["gunicorn", "delivery_app_backend.wsgi:application", "--bind", "0.0.0.0:8000"]
+# Start the app
+CMD ["/app/entrypoint.sh"]
