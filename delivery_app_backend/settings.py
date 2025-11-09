@@ -94,6 +94,8 @@ SITE_ID = 1  # required by allauth
 #         'rest_framework.authentication.TokenAuthentication',
 #     ],
 # }
+
+REST_USE_SESSION = False
 REST_FRAMEWORK = {
     'DEFAULT_SCHEMA_CLASS': 'drf_spectacular.openapi.AutoSchema',
     'DEFAULT_AUTHENTICATION_CLASSES': [
